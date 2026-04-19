@@ -24,9 +24,9 @@ const injectedFunc = (domain)=>{
     window.open(
         "https://"+ domain +"/share?text="+
         e(sel)  + "%0A%0A" +
-        e(document.title.replace(
+        "[" + e(document.title.replace(
             new RegExp('https://t.co/[A-Za-z]+','g'),''
-        ))+" "+e(location.href),
+        )) + "](" + e(location.href) + ")",
         "_blank",
         "width=550,height=420,left="+
         (s.availLeft+s.availWidth/2-275)+
